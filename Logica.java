@@ -5,8 +5,10 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
+import javax.swing.JButton;
 
 public class Logica {
+    public static int turno = 0;
     
     public static ActionListener reproducirSonidoListener (double frequencia){
 
@@ -45,6 +47,14 @@ public class Logica {
         line.close();
     }
 
+    public static void tocarBotones(JButton[] listaDeBotones){
+        listaDeBotones[2].doClick();
+    }
+
+
+    public static void nuevoTurno(){
+        turno++;
+    }
     
     
 

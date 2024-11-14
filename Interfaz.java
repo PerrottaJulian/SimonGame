@@ -20,7 +20,7 @@ public class Interfaz extends JFrame {
     private JButton botonAmarillo;
     private JButton botonAzul;
     
-    public static List<JButton> misBotones = new ArrayList<JButton>();
+    public JButton[] misBotones = new JButton[]{botonVerde, botonRojo, botonAmarillo, botonAzul};
 
     public Interfaz() 
     {
@@ -81,10 +81,14 @@ public class Interfaz extends JFrame {
         botonAzul.setBackground(Color.BLUE);
         botonAzul.addActionListener(Logica.reproducirSonidoListener(659.255));
 
-        misBotones.add(botonVerde);
-        misBotones.add(botonRojo);
-        misBotones.add(botonAmarillo);
-        misBotones.add(botonAzul);
+        misBotones[0] = botonVerde;
+        misBotones[1] = botonRojo;
+        misBotones[2] = botonAmarillo;
+        misBotones[3] = botonAzul;
+        // misBotones.add(botonVerde);
+        // misBotones.add(botonRojo);
+        // misBotones.add(botonAmarillo);
+        // misBotones.add(botonAzul);
 
         panel.add(botonVerde);
         panel.add(botonRojo);
@@ -92,8 +96,5 @@ public class Interfaz extends JFrame {
         panel.add(botonAzul);
     }
 
-    private void vaciar(){
-        panel.removeAll();
-    }
 
 }
