@@ -2,7 +2,10 @@
 public class Simon {
     public static void main(String[] args) {
         //inicio de la ventana.
-        new Ventana();
+        Interfaz miInterfaz = new Interfaz();
+
+        Logica.tocarBotones(miInterfaz.misBotones);
+
     }
 
 }
