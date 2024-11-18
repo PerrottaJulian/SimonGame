@@ -1,10 +1,19 @@
 //Cambio en la Branch del Trabajo
-public class Simon {
-    public static void main(String[] args) {
+public class Simon
+{
+    public static void main(String[] args) throws InterruptedException 
+    {
         //inicio de la ventana.
-        Interfaz miInterfaz = new Interfaz();
+        //!codigo viejo
+        /*
+        Logica miJuego = new Logica();
 
-        Logica.tocarBotones(miInterfaz.misBotones);
+        for (int i = 0; i < 5; i++)
+        {
+        }*/
+
+        //toDo: Agregar en Logica funcion turno
+        //toDo: Agregar new Logica()
 
     }
 

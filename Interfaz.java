@@ -96,5 +96,10 @@ public class Interfaz extends JFrame {
         panel.add(botonAzul);
     }
 
+    private void setPerdio()
+    {
+        JLabel perdio = new JLabel("Has Perdido :(");
+    }
+
 
 }
