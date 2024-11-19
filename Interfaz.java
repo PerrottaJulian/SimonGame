@@ -13,9 +13,7 @@ import javax.swing.SwingConstants;
 
 public class Interfaz extends JFrame {
     public static final int ANCHO = 800, ALTO = 600;
-    /*public */ private JPanel panel;
-
-    //JOptionPane.showMessageDialog(frame, "Juego terminado");
+    /*public */ public JPanel panel;
 
     private JButton botonVerde;
     private JButton botonRojo;
@@ -66,23 +64,23 @@ public class Interfaz extends JFrame {
         botonVerde = new JButton();
         botonVerde.setBounds(300,200 ,80,80);
         botonVerde.setBackground(Color.GREEN);
-        botonVerde.addActionListener(Logica.reproducirSonidoListener(329.628));
+        botonVerde.addActionListener(Logica.reproducirSonidoListener(botonVerde, 329.628));
         
 
         botonRojo = new JButton();
         botonRojo.setBounds(380,200 ,80,80);
         botonRojo.setBackground(Color.RED);
-        botonRojo.addActionListener(Logica.reproducirSonidoListener(440));
+        botonRojo.addActionListener(Logica.reproducirSonidoListener(botonRojo, 440));
         
         botonAmarillo = new JButton();
         botonAmarillo.setBounds(300,280,80,80);
         botonAmarillo.setBackground(Color.YELLOW);
-        botonAmarillo.addActionListener(Logica.reproducirSonidoListener(554.365));
+        botonAmarillo.addActionListener(Logica.reproducirSonidoListener(botonAmarillo, 554.365));
 
         botonAzul = new JButton();
         botonAzul.setBounds(380,280,80,80);
         botonAzul.setBackground(Color.BLUE);
-        botonAzul.addActionListener(Logica.reproducirSonidoListener(659.255));
+        botonAzul.addActionListener(Logica.reproducirSonidoListener(botonAzul, 659.255));
 
         misBotones[0] = botonVerde;
         misBotones[1] = botonRojo;
