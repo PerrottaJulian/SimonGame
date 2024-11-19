@@ -12,21 +12,29 @@ import javax.swing.JButton;
 
 
 public class Logica {
-    private static Interfaz miInterfaz = new Interfaz();
-    private static List<JButton> secuencia = new ArrayList<JButton>();
-    private static Random random = new Random();
+    //Inicio la Interfaz
+    private Interfaz miInterfaz = new Interfaz();
+    //Secuencia de botones que presionara el juego po su cuenta, y se ira incrementando
+    private List<JButton> secuencia = new ArrayList<JButton>();
+    //Botones presionados por el Jugador
+    private List<JButton> botonesPresionados = new ArrayList<JButton>();
+    //
+    private Random random = new Random();
     
     public static int turno = 1;
-    public static boolean isTurnoDelJugador = false;
+    public boolean isTurnoDelJugador = false;
 
     //Action Listener del metodo reproducir sonido, para añadir a los botones.
     public static ActionListener reproducirSonidoListener (double frequencia){
 
         return new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                try {
+                try 
+                {
                     reproducirSonido(frequencia);
-                } catch (LineUnavailableException e1) {
+
+                } catch (LineUnavailableException e1) 
+                {
                     e1.printStackTrace();
                 }
             };
@@ -60,25 +68,26 @@ public class Logica {
     }
 
     //metodos para accionar sobre la secuencia de botones
-    private static void aumentarSecuencia()
+    private void aumentarSecuencia()
     {
         int numeroRandom = random.nextInt(4);
         JButton botonRandom = miInterfaz.misBotones[numeroRandom];
         secuencia.add(botonRandom);
     }
 
-    private static void tocarSecuencia()
+    private void tocarSecuencia() throws InterruptedException
     {
         if (!secuencia.isEmpty())
         {
             for (JButton boton : secuencia){
                 boton.doClick();
+                Thread.sleep(100); //espera necsaria para que la visual de los botones no se superponga
             }
         }
     }
 
     //metodo de logica de turnos
-    public static void jugarTurno() throws InterruptedException
+    public void jugarTurno() throws InterruptedException
     {
 
         if(!isTurnoDelJugador)
@@ -86,6 +95,15 @@ public class Logica {
             aumentarSecuencia();
             tocarSecuencia();
             
+        }
+        if(isTurnoDelJugador)
+        {
+
+            while (botonesPresionados.size() != secuencia.size())
+            {
+
+            }
+
         }
 
         isTurnoDelJugador = !isTurnoDelJugador;
@@ -96,7 +114,7 @@ public class Logica {
 
 
 
-    public static void nuevoTurno(){
+    public void nuevoTurno(){
         turno++;
     }
     

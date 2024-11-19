@@ -13,7 +13,9 @@ import javax.swing.SwingConstants;
 
 public class Interfaz extends JFrame {
     public static final int ANCHO = 800, ALTO = 600;
-    private JPanel panel;
+    /*public */ private JPanel panel;
+
+    //JOptionPane.showMessageDialog(frame, "Juego terminado");
 
     private JButton botonVerde;
     private JButton botonRojo;
@@ -65,6 +67,7 @@ public class Interfaz extends JFrame {
         botonVerde.setBounds(300,200 ,80,80);
         botonVerde.setBackground(Color.GREEN);
         botonVerde.addActionListener(Logica.reproducirSonidoListener(329.628));
+        
 
         botonRojo = new JButton();
         botonRojo.setBounds(380,200 ,80,80);
@@ -95,11 +98,5 @@ public class Interfaz extends JFrame {
         panel.add(botonAmarillo);
         panel.add(botonAzul);
     }
-
-    private void setPerdio()
-    {
-        JLabel perdio = new JLabel("Has Perdido :(");
-    }
-
 
 }

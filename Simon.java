@@ -15,13 +15,13 @@ public class Simon
         //toDo: Agregar en Logica funcion turno
         //toDo: Agregar new Logica()
 
-        new Logica();
+        Logica miJuego = new Logica();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 15; i++) {
             System.out.println("Turno Numero: "+Logica.turno);
-            System.out.println("Juega el jugador? "+Logica.isTurnoDelJugador);
+            System.out.println("Juega el jugador? "+miJuego.isTurnoDelJugador);
 
-            Logica.jugarTurno();
+            miJuego.jugarTurno();
         }
 
     }
