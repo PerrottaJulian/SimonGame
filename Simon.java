@@ -1,5 +1,4 @@
-//Cambio en la Branch del Trabajo
-
+// Branch Main, juego terminado
 import javax.sound.sampled.LineUnavailableException;
 
 public class Simon
